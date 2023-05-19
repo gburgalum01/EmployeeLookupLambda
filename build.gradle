@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+
+repositories {
+    mavenCentral()
+    maven { url "https://plugins.gradle.org/m2/" }
+}
+
+dependencies {
+    //The following dependency is needed to implement the Lambda functionality.
+    implementation group: 'com.amazonaws', name: 'aws-lambda-java-core', version: '1.2.2'
+
+    //The following dependencies are needed to handle input data formatted using JSON.
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.15.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.1'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    //Package all of the dependencies in the JAR file.
+    jar {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+        from {
+            configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

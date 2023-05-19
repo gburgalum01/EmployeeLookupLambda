@@ -1,0 +1,28 @@
+[
+  {
+    "companyName": "SonicWave",
+    "employees": [
+      {
+        "id": 123,
+        "name": "William McDonald"
+      },
+      {
+        "id": 985,
+        "name": "Sheila Blue"
+      }
+    ]
+  },
+  {
+    "companyName": "BlueLines",
+    "employees": [
+      {
+        "id": 5292,
+        "name": "John Asuka"
+      },
+      {
+        "id": 5293,
+        "name": "Terry Rablonski"
+      }
+    ]
+  }
+]
