@@ -4,10 +4,12 @@
 
 This is a sample project that provides the functionality for an AWS Lambda function that looks up an employee in a JSON-formatted file.
 
+
 ## Requirements
 * JDK 11
 * Gradle 7
 * An AWS account in which you can create a Lambda function.
+
 
 ## Building the Artifact
 Run the following command to build the JAR file named EmployeeLookupLambda.jar that needs to be uploaded to the Lambda function.
@@ -26,6 +28,7 @@ In your AWS account, create a new Lambda with the following parameters.
 | Handler   | com.brm.lambda.EmployeeLookupRequestHandler::handleRequest |
 
 Upload the EmployeeLookupLambda.jar file that you built to the Lambda function.
+
 
 ## Running the Lambda
 
